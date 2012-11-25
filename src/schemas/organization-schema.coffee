@@ -4,9 +4,9 @@ errors = require 'some-errors'
 
 pluginAccessibleBy = require "mongoose-plugins-accessible-by"
 
-pluginTimestamp = require "mongoose-plugins-timestamp/index"
-pluginCreatedBy = require "mongoose-plugins-created-by/index"
-pluginTagsSimple = require "mongoose-plugins-tags-simple/index"
+pluginTimestamp = require "mongoose-plugins-timestamp"
+pluginCreatedBy = require "mongoose-plugins-created-by"
+pluginTagsSimple = require "mongoose-plugins-tags-simple"
 pluginDeleteParanoid = require "mongoose-plugins-delete-paranoid"
 pluginResourceLimits = require "mongoose-plugins-resource-limits"
 

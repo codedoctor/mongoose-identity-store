@@ -1,7 +1,7 @@
 _ = require 'underscore-ext'
 
 Scope = require('../scope').Scope
-PageResult = require('../../paginator').PageResult
+PageResult = require('simple-paginator').PageResult
 
 ###
 Provides methods to interact with the scope store.

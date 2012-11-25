@@ -1,7 +1,7 @@
 _ = require 'underscore-ext'
 errors = require 'some-errors'
 
-PageResult = require('../../../modules/paginator').PageResult
+PageResult = require('simple-paginator').PageResult
 
 mongoose = require "mongoose"
 ObjectId = mongoose.Types.ObjectId

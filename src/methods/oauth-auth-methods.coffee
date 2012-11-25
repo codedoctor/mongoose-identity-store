@@ -1,6 +1,6 @@
 _ = require 'underscore-ext'
 
-PageResult = require('../../paginator/index').PageResult
+PageResult = require('simple-paginator').PageResult
 passgen = require('passgen')
 
 

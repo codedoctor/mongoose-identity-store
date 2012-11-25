@@ -1,7 +1,7 @@
 _ = require 'underscore-ext'
 errors = require 'some-errors'
 
-PageResult = require('../../paginator').PageResult
+PageResult = require('simple-paginator').PageResult
 
 module.exports = class OauthAppMethods
   KEY_LENGTH = 20
