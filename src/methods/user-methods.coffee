@@ -121,7 +121,7 @@ module.exports = class UserMethods
 
       # Be smart, only try email if we have something that looks like an email.
 
-      @models.User.findOne emails: usernameOrEmail , (err, item) =>
+      @models.User.findOne primaryEmail: usernameOrEmail , (err, item) =>
         return cb err if err
         cb(null, item)
 
@@ -155,10 +155,13 @@ module.exports = class UserMethods
   ###
   create: (objs = {}, cb) =>
     #_.extendFiltered data, CREATE_FIELDS, objs
-    _.defaults objs, {username : null, email : null , password : null}
+
+    _.defaults objs, {username : null, primaryEmail : null , password : null}
+    objs.primaryEmail = objs.email if objs.email && !objs.primaryEmail
+    delete objs.email
 
     user = new @models.User objs
-    user.emails = [objs.email] if objs.email
+    user.emails = [objs.primaryEmail] if objs.primaryEmail
 
     ###
     var gravatar = require('gravatar');

@@ -20,8 +20,8 @@ This is a work in progress, and some indexes need to be defined. You have been w
 
 * Change version in package.json
 git add . -A
-git commit -m "Upgrading to v0.2.0"
-git tag -a v0.2.0 -m 'version 0.2.0'
+git commit -m "Upgrading to v0.2.1"
+git tag -a v0.2.1 -m 'version 0.2.1'
 git push --tags
 npm publish
 
