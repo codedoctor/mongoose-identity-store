@@ -1,0 +1,58 @@
+{
+  "author": "Martin Wawrusch <martin@wawrusch.com> (http://martinatsunset.com)",
+  "name": "mongoose-identity-store",
+  "description": "A bunch of mongoose schemas to implement identity management (users, accesstokens, oauth apps)",
+  "version": "0.2.0",
+  "main" : "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/codedoctor/mongoose-identity-store.git"
+  },
+  "bin" : {
+  },
+  "directories" : {
+    "lib" : "./lib",
+    "test" : "./test"
+  },
+  "keywords" : [
+    "mongoose","identity","user","oauth2"
+  ],
+  "scripts": {
+    "prepublish" : "coffee -c -o lib src",
+    "watch" : "coffee -c -w  -o lib src",
+    "test": "coffee -c -o lib src;NODE_ENV=test node_modules/.bin/mocha --timeout 10000 -R spec test/*-test.coffee"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "dependencies": {
+    "underscore" : ">=1.4.2",
+    "mongoose" : ">=3.4.0",
+    "bcrypt": "0.7.2",
+    "passgen": "1.0.1",
+    "underscore-ext" : "0.2.0",
+    "date-utils": "1.2.12",
+    "some-errors" : "0.2.0",
+    "mongoose-plugins-timestamp" : "0.2.0",
+    "mongoose-plugins-created-by" : "0.2.0",
+    "mongoose-plugins-delete-paranoid" : "0.2.0",
+    "mongoose-plugins-resource-limits" : "0.2.0",
+    "mongoose-plugins-tags-simple" : "0.2.0",
+    "mongodb-objectid-helper" : "0.2.0",
+    "mongoose-plugins-accessible-by": "0.0.1",
+    "simple-paginator" : "0.2.0"
+  },
+  "devDependencies": {
+    "async": "0.1.22",
+    "coffee-script": "1.4.0",
+    "should": "1.2.1",
+    "mocha": "1.6.0"
+  },
+  "bugs": { "url": "http://github.com/codedoctor/mongoose-identity-store/issues" },
+  "licenses": [
+    { "type": "MIT",
+      "url": "http://github.com/codedoctor/mongoose-identity-store/raw/master/LICENSE"
+    }
+  ]
+  
+}
