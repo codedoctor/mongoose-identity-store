@@ -93,6 +93,18 @@ module.exports = class UserMethods
         return cb err if err
         cb null, item
 
+  destroy: (usernameOrId, actor, cb = ->) =>
+    @getByNameOrId usernameOrId, (err, item) =>
+      # CHECK ACCESS RIGHTS. If actor is not the creator or in admin role
+      return cb err if err
+      return cb new errors.NotFound("/users/#{usernameOrId}") unless item
+
+      return cb null if item.isDeleted
+
+      item.remove (err) =>
+        return cb err if err
+        cb null, item
+
   setPassword: (usernameOrId, password, actor, cb = ->) =>
     @getByNameOrId usernameOrId, (err, item) =>
       # CHECK ACCESS RIGHTS. If actor is not the creator or in admin role
