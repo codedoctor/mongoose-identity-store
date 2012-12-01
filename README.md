@@ -9,6 +9,9 @@ This is a work in progress, and some indexes need to be defined. You have been w
 
 ## Release Notes
 
+### 0.2.3
+destroy paranoid users too
+
 ### 0.2.2
 added user.destroy
 
@@ -23,8 +26,8 @@ added user.destroy
 
 * Change version in package.json
 git add . -A
-git commit -m "Upgrading to v0.2.2"
-git tag -a v0.2.2 -m 'version 0.2.2'
+git commit -m "Upgrading to v0.2.3"
+git tag -a v0.2.3 -m 'version 0.2.3'
 git push --tags
 npm publish
 

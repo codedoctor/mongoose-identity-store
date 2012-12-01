@@ -99,8 +99,6 @@ module.exports = class UserMethods
       return cb err if err
       return cb new errors.NotFound("/users/#{usernameOrId}") unless item
 
-      return cb null if item.isDeleted
-
       item.remove (err) =>
         return cb err if err
         cb null, item

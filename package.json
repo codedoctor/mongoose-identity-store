@@ -2,7 +2,7 @@
   "author": "Martin Wawrusch <martin@wawrusch.com> (http://martinatsunset.com)",
   "name": "mongoose-identity-store",
   "description": "A bunch of mongoose schemas to implement identity management (users, accesstokens, oauth apps)",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main" : "lib/index.js",
   "repository": {
     "type": "git",
