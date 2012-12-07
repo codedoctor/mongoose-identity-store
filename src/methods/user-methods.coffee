@@ -36,6 +36,18 @@ module.exports = class UserMethods
         cb null, new PageResult(items || [], totalCount, offset, count)
 
   ###
+  Retrieves users by passing a list of id's, which can be string or objectIds
+  ###
+  getByIds:(idList = [], cb) =>
+    idList = _.map idList, (x) -> new ObjectId x.toString()
+
+    @models.User.find({}).where('_id').in(idList).exec (err, items) =>
+      return cb err if err
+      items or= []
+
+      cb null, new PageResult(items, items.length, 0, 99999999)
+
+  ###
   Looks up a user by id.
   ###
   get: (id, cb = ->) =>

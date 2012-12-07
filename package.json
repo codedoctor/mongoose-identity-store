@@ -2,7 +2,7 @@
   "author": "Martin Wawrusch <martin@wawrusch.com> (http://martinatsunset.com)",
   "name": "mongoose-identity-store",
   "description": "A bunch of mongoose schemas to implement identity management (users, accesstokens, oauth apps)",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "main" : "lib/index.js",
   "repository": {
     "type": "git",
@@ -46,7 +46,8 @@
     "async": "0.1.22",
     "coffee-script": "1.4.0",
     "should": "1.2.1",
-    "mocha": "1.6.0"
+    "mocha": "1.6.0",
+    "mongoskin" : "0.4.4"
   },
   "bugs": { "url": "http://github.com/codedoctor/mongoose-identity-store/issues" },
   "licenses": [
