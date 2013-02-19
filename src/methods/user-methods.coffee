@@ -21,7 +21,7 @@ module.exports = class UserMethods
     'title','location','needsInit']
 
   ###
-  Initializes a new instance of the @see ScottyMethods class.
+  Initializes a new instance of the {UserMethods} class.
   @param {Object} models A collection of models that can be used.
   ###
   constructor:(@models) ->
@@ -55,6 +55,31 @@ module.exports = class UserMethods
     @models.User.findOne _id: id , (err, item) =>
       return cb err if err
       cb null, item
+
+  ###
+  Returns a list of users who match q. In this version we do a straight user name match.
+  @param {String} q a search string.
+  @param {Object} options a set of options, which can be null
+  @param {Function} cb a callback that is invoked after completion of this method.
+  @option options [Integer] limit the maximum number of results to return, defaults to 10.
+  @option options [String] sortOrder the sort order in mongodb syntax, which defaults to 'username'.
+  @option options [String] select the space separated fields to return, which default to '_id username displayName selectedUserImage'.
+  ###
+  lookup: (q,options = {}, cb = ->) =>
+    q = (q || '').toLowerCase().trim()
+
+    options.limit or= 10
+    options.sortOrder or= 'username'
+    options.select or= '_id username displayName selectedUserImage'
+
+    r = new RegExp("^#{q}")
+
+    #
+    @models.User.find({username : r }).select(options.select).sort(options.sortOrder).limit(options.limit).exec (err, items) =>
+      return cb err if err
+      items or= []
+
+      cb null, new PageResult(items, items.length, 0, items.length)
 
   getByName: (name, cb = ->) =>
     name = name.toLowerCase()

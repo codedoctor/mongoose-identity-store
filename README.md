@@ -9,6 +9,9 @@ This is a work in progress, and some indexes need to be defined. You have been w
 
 ## Release Notes
 
+### 0.2.6
+Added lookup method for fast mention lookup to users.
+
 ### 0.2.5
 bcrypt update, fixes memory leak or so they say
 
@@ -32,8 +35,8 @@ added user.destroy
 
 * Change version in package.json
 git add . -A
-git commit -m "Upgrading to v0.2.5"
-git tag -a v0.2.5 -m 'version 0.2.5'
+git commit -m "Upgrading to v0.2.6"
+git tag -a v0.2.6 -m 'version 0.2.6'
 git push --tags
 npm publish
 
