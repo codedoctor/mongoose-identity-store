@@ -48,6 +48,25 @@ module.exports = class UserMethods
       cb null, new PageResult(items, items.length, 0, 99999999)
 
   ###
+  Retrieves users by passing a list of usernames.
+  @param {[String]} usernames an array of usernames. Case insensitive
+  @param {Object} options a set of options, which can be null
+  @param {Function} cb a callback that is invoked after completion of this method.
+  @option options [String] select the space separated fields to return, which default to all.
+  ###
+  getByUsernames:(usernames = [],options = {}, cb = ->) =>
+    usernames = _.map usernames, (x) -> x.toLowerCase()
+
+    query = @models.User.find({}).where('username').in(usernames)
+    query = query.select(options.select) if options.select && options.select.length > 0
+
+    query.exec (err, items) =>
+      return cb err if err
+      items or= []
+
+      cb null, new PageResult(items, items.length, 0, usernames.length)
+
+  ###
   Looks up a user by id.
   ###
   get: (id, cb = ->) =>

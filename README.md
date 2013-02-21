@@ -9,6 +9,9 @@ This is a work in progress, and some indexes need to be defined. You have been w
 
 ## Release Notes
 
+### 0.2.7
+Added retrieval of users by usernames
+
 ### 0.2.6
 Added lookup method for fast mention lookup to users.
 
@@ -35,8 +38,8 @@ added user.destroy
 
 * Change version in package.json
 git add . -A
-git commit -m "Upgrading to v0.2.6"
-git tag -a v0.2.6 -m 'version 0.2.6'
+git commit -m "Upgrading to v0.2.7"
+git tag -a v0.2.7 -m 'version 0.2.7'
 git push --tags
 npm publish
 
