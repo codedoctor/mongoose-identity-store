@@ -24,9 +24,18 @@ AdminMethods = require './methods/admin-methods'
 
 module.exports = class Store
   constructor: (@settings = {}) ->
-    _.defaults @settings, {}
+    _.defaults @settings, 
+                  autoIndex : true
 
     configOauthProvider = @settings.oauthProvider || { scopes: []}
+
+    @schemas = [UserSchema,UserIdentitySchema,UserImageSchema,UserProfileSchema,EmailSchema,
+                OrganizationSchema,OauthAccessGrantSchema,OauthAccessTokenSchema,OauthAppSchema,
+                OauthRedirectUriSchema,OauthClientSchema]
+
+    for schema in @schemas
+      schema.set 'autoIndex', @settings.autoIndex
+
 
     @models =
       User : mongoose.model "User", UserSchema

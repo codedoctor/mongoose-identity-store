@@ -2,7 +2,7 @@
   "author": "Martin Wawrusch <martin@wawrusch.com> (http://martinatsunset.com)",
   "name": "mongoose-identity-store",
   "description": "A bunch of mongoose schemas to implement identity management (users, accesstokens, oauth apps)",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main" : "lib/index.js",
   "repository": {
     "type": "git",
@@ -28,10 +28,10 @@
   "dependencies": {
     "underscore" : "1.4.4",
     "mongoose" : ">=3.6.0",
-    "bcrypt": "0.7.5",
+    "bcrypt": "0.7.6",
     "passgen": "1.0.1",
     "underscore-ext" : "0.2.0",
-    "date-utils": "1.2.12",
+    "date-utils": "1.2.13",
     "some-errors" : "0.2.0",
     "mongoose-plugins-timestamp" : "0.2.0",
     "mongoose-plugins-created-by" : "0.2.0",
@@ -40,7 +40,7 @@
     "mongoose-plugins-tags-simple" : "0.2.0",
     "mongodb-objectid-helper" : "0.2.0",
     "mongoose-plugins-accessible-by": "0.2.2",
-    "simple-paginator" : "0.2.0"
+    "simple-paginator" : "0.2.1"
   },
   "devDependencies": {
     "async": "0.2.6",
