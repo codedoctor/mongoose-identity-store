@@ -9,6 +9,10 @@ This is a work in progress, and some indexes need to be defined. You have been w
 
 ## Release Notes
 
+### 0.3.2
+Bug fix: On creation of a facebook account that has an invalid email address don't blow up.
+Reason: If a user has a facebook account associated with an invalid address facebook returns a bogus record...
+
 ### 0.3.1
 Added autoIndex option to store creation, defaults to true. Updated dependencies
 

@@ -400,7 +400,12 @@ module.exports = class UserMethods
 
           emails = []
           if profile.emails && _.isArray(profile.emails)
+            profile.emails = _.filter profile.emails, (x) ->x.value && x.value.length > 3
+
             emails = _.map(profile.emails, (x) -> x.value)
+
+
+
           # emails
           for email in emails
             item.emails.push new @models.Email
