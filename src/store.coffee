@@ -36,19 +36,21 @@ module.exports = class Store
     for schema in @schemas
       schema.set 'autoIndex', @settings.autoIndex
 
+    m = mongoose
+    m = @settings.connection if @settings.connection
 
     @models =
-      User : mongoose.model "User", UserSchema
-      UserIdentity: mongoose.model "UserIdentity", UserIdentitySchema
-      UserImage: mongoose.model "UserImage", UserImageSchema
-      UserProfile: mongoose.model "UserProfile", UserProfileSchema
-      Email: mongoose.model "Email", EmailSchema
-      Organization : mongoose.model "Organization", OrganizationSchema
-      OauthAccessGrant : mongoose.model "OAuthAccessGrant", OauthAccessGrantSchema
-      OauthAccessToken : mongoose.model "OauthAccessToken", OauthAccessTokenSchema
-      OauthApp : mongoose.model "OauthApp", OauthAppSchema
-      OauthRedirectUri : mongoose.model "OauthRedirectUri", OauthRedirectUriSchema
-      OauthClient : mongoose.model "OauthClient", OauthClientSchema
+      User : m.model "User", UserSchema
+      UserIdentity: m.model "UserIdentity", UserIdentitySchema
+      UserImage: m.model "UserImage", UserImageSchema
+      UserProfile: m.model "UserProfile", UserProfileSchema
+      Email: m.model "Email", EmailSchema
+      Organization : m.model "Organization", OrganizationSchema
+      OauthAccessGrant : m.model "OAuthAccessGrant", OauthAccessGrantSchema
+      OauthAccessToken : m.model "OauthAccessToken", OauthAccessTokenSchema
+      OauthApp : m.model "OauthApp", OauthAppSchema
+      OauthRedirectUri : m.model "OauthRedirectUri", OauthRedirectUriSchema
+      OauthClient : m.model "OauthClient", OauthClientSchema
 
     @users = new UserMethods @models
     @organizations = new OrganizationMethods @models
