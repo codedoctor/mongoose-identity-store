@@ -21,6 +21,7 @@ OauthAppMethods = require './methods/oauth-app-methods'
 OauthAuthMethods = require './methods/oauth-auth-methods'
 OauthScopeMethods = require './methods/oauth-scope-methods'
 AdminMethods = require './methods/admin-methods'
+RoleMethods = require './methods/role-methods'
 
 module.exports = class Store
   constructor: (@settings = {}) ->
@@ -59,3 +60,5 @@ module.exports = class Store
     @oauthApps = new OauthAppMethods @models, @oauthScopes
     @oauthAuth = new OauthAuthMethods @models
     @admin = new AdminMethods @models, @users, @oauthApps, @oauthAuth
+    @roles = new RoleMethods @models
+    

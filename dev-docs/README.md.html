@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='UTF-8'>
+  <title>CoffeeScript API Documentation</title>
+  <link rel='stylesheet' href='assets/codo.css' type='text/css'>
+  <script src='assets/codo.js'></script>
+  <script src='assets/search_data.js'></script>
+</head>
+  <body>
+    <div id='base' data-path=''></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='README.md.html' title='Mongoose-identity-store'>Mongoose-identity-store</a>
+    &raquo;
+    <a href='class_index.html' title='Index'>Index</a>
+    &raquo;
+    <span class='title'>README.md</span>
+    <nav>
+      <ul>
+        <li class='noframes'>
+          (<a class='noframes' href='#'>no frames</a>)
+        </li>
+      </ul>
+    </nav>
+    <div id='search'>
+      <a id='class_list_link' href='class_list.html'>Classes</a>
+      <a id='file_list_link' href='file_list.html'>Files</a>
+      <a id='method_list_link' href='method_list.html'>Methods</a>
+      <a id='extra_list_link' href='extra_list.html'>Extras</a>
+    </div>
+  </div>
+  <iframe id='search_frame'></iframe>
+  <div id='fuzzySearch'>
+    <input type='text'>
+    <ol></ol>
+  </div>
+  <div id='help'>
+    <p>
+      Quickly fuzzy find classes, mixins, methods, file:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-T</span>
+        Open fuzzy finder dialog
+      </li>
+    </ul>
+    <p>
+      In frame mode you can toggle the list naviation frame on the left side:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-L</span>
+        Toggle list view
+      </li>
+    </ul>
+    <p>
+      You can focus a list in frame mode or toggle a tab in frameless mode:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-C</span>
+        Class list
+      </li>
+      <li>
+        <span>Ctrl-I</span>
+        Mixin list
+      </li>
+      <li>
+        <span>Ctrl-F</span>
+        File list
+      </li>
+      <li>
+        <span>Ctrl-M</span>
+        Method list
+      </li>
+      <li>
+        <span>Ctrl-E</span>
+        Extras list
+      </li>
+    </ul>
+    <p>
+      You can focus and blur the search input:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-S</span>
+        Focus search input
+      </li>
+      <li>
+        <span>Esc</span>
+        Blur search input
+      </li>
+    </ul>
+    <p>
+      In frameless mode you can close the list tab:
+    </p>
+    <ul>
+      <li>
+        <span>Esc</span>
+        Close list tab
+      </li>
+    </ul>
+  </div>
+</div>
+    <div id='content'>
+      <nav class='toc'>
+        <p class='title'>
+          <a class='hide_toc' href='#'>
+            <strong>Table of Contents</strong>
+          </a>
+          <small>
+            (<a class='float_toc' href='#'>left</a>)
+          </small>
+        </p>
+      </nav>
+      <div id='filecontents'>
+        <h1>mongoose-identity-store</h1><p>npm install mongoose-identity-store</p><p>A bunch of mongoose schemas to implement identity management (users, accesstokens, oauth apps)</p><p>This is a work in progress, and some indexes need to be defined. You have been warned</p><h2>Release Notes</h2>
+<h3>0.3.3</h3><p>updated versions
+allow for models to be created from connections</p><h3>0.3.2</h3><p>Bug fix: On creation of a facebook account that has an invalid email address don&#39;t blow up.
+Reason: If a user has a facebook account associated with an invalid address facebook returns a bogus record...</p><h3>0.3.1</h3><p>Added autoIndex option to store creation, defaults to true. Updated dependencies</p><h3>0.3.0</h3><p>Bumped some of deps up, especially mongoose</p><h3>0.2.7</h3><p>Added retrieval of users by usernames</p><h3>0.2.6</h3><p>Added lookup method for fast mention lookup to users.</p><h3>0.2.5</h3><p>bcrypt update, fixes memory leak or so they say</p><h3>0.2.4</h3><p>Added tests, and getByIds</p><h3>0.2.3</h3><p>destroy paranoid users too</p><h3>0.2.2</h3><p>added user.destroy</p><h3>0.2.0</h3>
+<ul>
+<li>First version</li>
+</ul>
+<h2>Internal Stuff</h2>
+<ul>
+<li>npm run-script watch</li>
+</ul>
+<h2>Publish new version</h2>
+<ul>
+<li>Change version in package.json
+git add . -A
+git commit -m &quot;Upgrading to v0.3.3&quot;
+git push
+git tag -a v0.3.3 -m &#39;version 0.3.3&#39;
+git push --tags
+npm publish</li>
+</ul>
+<h2>Contributing to mongoose-identity-store</h2>
+<ul>
+<li>Check out the latest master to make sure the feature hasn&#39;t been implemented or the bug hasn&#39;t been fixed yet</li>
+<li>Check out the issue tracker to make sure someone already hasn&#39;t requested it and/or contributed it</li>
+<li>Fork the project</li>
+<li>Start a feature/bugfix branch</li>
+<li>Commit and push until you are happy with your contribution</li>
+<li>Make sure to add tests for it. This is important so I don&#39;t break it in a future version unintentionally.</li>
+<li>Please try not to mess with the package.json, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.</li>
+</ul>
+<h2>Copyright</h2><p>Copyright (c) 2012 Martin Wawrusch See LICENSE for
+further details.</p>
+      </div>
+    </div>
+    <div id='footer'>
+  Generated on
+  Sat Oct 19 2013 21:22:15 GMT-0700 (PDT)
+  by
+  <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
+  v1.9.0
+  (Node.js v0.10.17).
+  &#10034;
+  Press Ctrl-h to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
+  &#10034;
+  <a href='https://mksoft.ch'>mksoft.ch</a>
+</div>
+  </body>
+</html>

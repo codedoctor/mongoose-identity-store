@@ -1,0 +1,14 @@
+#!/bin/bash
+
+BASEDIR=$(dirname $0)
+
+echo $BASEDIR
+pushd $BASEDIR/..
+
+./node_modules/.bin/codo -i ./src -o ./dev-docs
+rc=$?
+if [[ $rc != 0 ]] ; then
+    exit $rc
+fi
+
+popd
