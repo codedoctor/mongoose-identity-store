@@ -9,7 +9,6 @@ EmailSchema = require './email-schema'
 UserIdentitySchema = require './user-identity-schema'
 UserProfileSchema = require './user-profile-schema'
 UserImageSchema = require './user-image-schema'
-RoleSchema = require './role-schema'
 
 ###
   Perhaps we should talk about identities, not users

@@ -8,6 +8,9 @@ A bunch of mongoose schemas to implement identity management (users, accesstoken
 This is a work in progress, and some indexes need to be defined. You have been warned
 
 ## Release Notes
+### 0.3.5
+sarcasm: exporting the Role schema might be helpful too.
+
 ### 0.3.4
 exposed role management methods
 
@@ -54,9 +57,9 @@ added user.destroy
 
 * Change version in package.json
 git add . -A
-git commit -m "Upgrading to v0.3.4"
+git commit -m "Upgrading to v0.3.5"
 git push
-git tag -a v0.3.4 -m 'version 0.3.4'
+git tag -a v0.3.5 -m 'version 0.3.5'
 git push --tags
 npm publish
 

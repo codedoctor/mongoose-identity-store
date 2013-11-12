@@ -13,6 +13,7 @@ OauthAccessTokenSchema = require './schemas/oauth-access-token-schema'
 OauthAppSchema = require './schemas/oauth-app-schema'
 OauthRedirectUriSchema = require './schemas/oauth-redirect-uri-schema'
 OauthClientSchema = require './schemas/oauth-client-schema'
+RoleSchema = require './schemas/role-schema'
 
 UserMethods = require './methods/user-methods'
 OrganizationMethods = require './methods/organization-methods'
@@ -32,7 +33,7 @@ module.exports = class Store
 
     @schemas = [UserSchema,UserIdentitySchema,UserImageSchema,UserProfileSchema,EmailSchema,
                 OrganizationSchema,OauthAccessGrantSchema,OauthAccessTokenSchema,OauthAppSchema,
-                OauthRedirectUriSchema,OauthClientSchema]
+                OauthRedirectUriSchema,OauthClientSchema,RoleSchema]
 
     for schema in @schemas
       schema.set 'autoIndex', @settings.autoIndex
@@ -42,6 +43,7 @@ module.exports = class Store
 
     @models =
       User : m.model "User", UserSchema
+      Role : m.model "Role", RoleSchema
       UserIdentity: m.model "UserIdentity", UserIdentitySchema
       UserImage: m.model "UserImage", UserImageSchema
       UserProfile: m.model "UserProfile", UserProfileSchema
@@ -61,4 +63,4 @@ module.exports = class Store
     @oauthAuth = new OauthAuthMethods @models
     @admin = new AdminMethods @models, @users, @oauthApps, @oauthAuth
     @roles = new RoleMethods @models
-    
+
